@@ -8,16 +8,6 @@ import ActivityList from "./components/ActivityList";
 
 function App() {
 
-const [supplies, setSupplies] = useState([])
-
-useEffect(()=> {
-    axios.get("https://fragile-apron-cow.cyclic.app/tasks")
-      .then(res => setSupplies(res.data))
-      .catch(err => console.log(err))
-}, [])
-
-console.log(supplies)
-
   return (
     <>
       <div id = "navbar">
