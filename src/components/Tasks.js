@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
+import Task from "./Task"
 
 export default function Tasks() {
 
@@ -13,11 +14,21 @@ const [tasksData, setTasksData] = useState([])
             .catch(err => console.log(err))
     }, [])
 
+    //iterating data to render tasks
+const taskElements = tasksData.map(task => {
+    return (
+        <Task {...task} />
+    )
+})
+
 //testing data was received
     console.log("tasksData: ", tasksData)
     return (
         <>
-            Tasks Page
+        <div className="task-container">
+            <h1>Tasks</h1>
+            {taskElements}
+        </div>
         </>
     )
 }

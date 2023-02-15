@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios"
+import Supply from "./Supply"
 
 export default function Supplies(){
 
@@ -16,14 +17,19 @@ const [suppliesData, setSuppliesData] = useState([])
 //testing data was received
     console.log("suppliesData: ", suppliesData)
 
-
+//iterating data to render supplies
+const supplyElements = suppliesData.map(supply => {
+    return (
+        <Supply {...supply}/>
+    )
+})
 
 
     return (
         <>
-        
-            <p>Supplies Page</p>
-            
+            <div className = "supplies-container">
+                {supplyElements}              
+            </div>
         </>
     )
 }
