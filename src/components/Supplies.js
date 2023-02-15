@@ -28,6 +28,7 @@ const supplyElements = suppliesData.map(supply => {
     return (
         <>
             <div className = "supplies-container">
+                <h1>Supplies</h1>
                 {supplyElements}              
             </div>
         </>
